@@ -5,6 +5,8 @@ VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JoyCollections", "JoyCollections\JoyCollections.csproj", "{14C21846-B2DB-4099-AB7A-AC39B4DE8893}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JoyCollections.Tests", "JoyCollections.Tests\JoyCollections.Tests.csproj", "{4538B910-AB25-46D9-8453-3FE91489A8D8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -18,5 +20,9 @@ Global
 		{14C21846-B2DB-4099-AB7A-AC39B4DE8893}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{14C21846-B2DB-4099-AB7A-AC39B4DE8893}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{14C21846-B2DB-4099-AB7A-AC39B4DE8893}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4538B910-AB25-46D9-8453-3FE91489A8D8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4538B910-AB25-46D9-8453-3FE91489A8D8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4538B910-AB25-46D9-8453-3FE91489A8D8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4538B910-AB25-46D9-8453-3FE91489A8D8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

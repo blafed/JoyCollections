@@ -26,7 +26,7 @@ namespace JoyCollections
         /// <summary>
         /// Gets or sets the amount by which the capacity of the array is increased when it is full upon adding an item.
         /// </summary>
-        public int IncreaseCapacityBy
+        public int increaseCapacityBy
         {
             get => _increaseCapacityBy;
             set
@@ -68,10 +68,11 @@ namespace JoyCollections
             }
             else
             {
-                Array.Resize(ref array, array.Length + IncreaseCapacityBy);
-                Array.Resize(ref flags, flags.Length + IncreaseCapacityBy);
+                Array.Resize(ref array, array.Length + increaseCapacityBy);
+                Array.Resize(ref flags, flags.Length + increaseCapacityBy);
                 index = _arrayEnd;
                 array[index] = item;
+                _arrayEnd++;
             }
             return index;
         }
@@ -103,7 +104,7 @@ namespace JoyCollections
         /// <exception cref="System.Exception">Thrown when the index is out of range or the item was removed.</exception>
         public ref T Get(int index)
         {
-            if (index < 0 || index >= _arrayEnd)
+            if (index < 0 || index > _arrayEnd)
                 throw new System.Exception("Index out of range " + index);
             if ((flags[index] & Flags.Removed) != 0)
                 throw new System.Exception("Item was removed " + index);
@@ -148,6 +149,7 @@ namespace JoyCollections
             public Iterator(JoyArray<T> array)
             {
                 this.array = array;
+                index = 0;
             }
 
             /// <summary>
@@ -171,6 +173,7 @@ namespace JoyCollections
                         index++;
                         continue;
                     }
+                    index++;
                     return true;
                 }
                 return false;
@@ -181,7 +184,7 @@ namespace JoyCollections
             /// </summary>
             public ref T GetCurrent()
             {
-                return ref array.array[index];
+                return ref array.array[index - 1];
             }
         }
     }
